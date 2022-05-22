@@ -1,9 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styled from "styled-components";
-
+import { useContext } from "react";
+import { json } from "stream/consumers";
+import styled, { ThemeContext } from "styled-components";
+import data from "../../data.json";
 const Home: NextPage = () => {
+  console.log(data);
   return (
     <div>
       <Head>
@@ -34,6 +37,9 @@ const Home: NextPage = () => {
             New
           </button>
         </div>
+        {data.map((item) => (
+          <li key={item.id}>{JSON.stringify(item)}</li>
+        ))}
       </S.Main>
     </div>
   );
@@ -57,20 +63,21 @@ const S = {
         .header-heading {
           margin-bottom: 0.5rem;
           font-size: 1.25rem;
-          color: rgb(12, 14, 22);
+          color: ${({ theme }) => theme.text};
           font-weight: bold;
           font-size: 2rem;
           line-height: 1.125;
           letter-spacing: -1px;
         }
         .header-details {
-          color: rgb(136, 142, 176);
+          color: ${({ theme }) => theme.p};
           font-size: 0.75rem;
           line-height: 1.125;
           letter-spacing: -0.25px;
         }
       }
       .filter-button {
+        color: ${({ theme }) => theme.text};
         max-width: 120px;
         min-width: 60px;
         display: flex;
@@ -93,6 +100,7 @@ const S = {
         line-height: 1.25;
         color: white;
         min-width: 5.875rem;
+        max-width: 8rem;
         padding: 0.5rem 1rem 0.5rem 0.5rem;
         background: rgb(124, 93, 250);
         transition: background 0.3s ease 0s, color 0.3s ease 0s;
