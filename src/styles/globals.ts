@@ -55,16 +55,12 @@ html {
     --black: hsl(0, 0%, 0%);
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
-    font-family: --apple-system, 
-    BlinkMacSystemFont, 'Segoe UI', 
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
-    'Helvetica Neue', sans-serif; 
+    font-family: 'Poppins', sans-serif;
 }
 body {
   overflow-x: hidden;
   background: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
-  font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
   transition: background-color 0.50s linear, color 0.50s linear;
 }
 a {

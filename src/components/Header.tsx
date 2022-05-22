@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <S.HeaderContainer>
       <div className="logo-wrapper">
-        <img src="/assets/logo-invoice.svg" alt="" />
+        <Image src="/assets/logo-invoice.svg" width={30} height={30} alt="" />
       </div>
       <div className="dark-mode-toggle-wrapper">
         <button
@@ -41,8 +41,8 @@ const Header = () => {
       <div className="avatar-wrapper">
         <button>
           <Image
-             width={40}
-             height={40}
+            width={40}
+            height={40}
             src="/assets/avatar.jpg"
             alt="avatar"
             aria-label="avatar"
