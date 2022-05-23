@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <div className="container">
           <div className="header-text-wrapper">
             <h2 className="header-heading">Invoices</h2>
-            <p className="header-details">There are 8 total invoices</p>
+            <p className="header-details">There are {data.length} total invoices</p>
           </div>
           <button className="filter-button">
             Filter{" "}
