@@ -29,18 +29,18 @@ export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState("light");
   const [mountedComponent, setMountedComponent] = useState(false);
   const themeMode = theme === "light" ? lightTheme : darkTheme;
-  const setMode = (mode: string) => {
+  const setMode = useCallback((mode: string) => {
     window.localStorage.setItem("theme", mode);
     setTheme(mode);
-  };
+  }, []);
   const themeToggler = useCallback(() => {
     theme === "light" ? setMode("dark") : setMode("light");
-  }, [theme]);
+  }, [setMode, theme]);
   useEffect(() => {
     const localTheme = window.localStorage.getItem("theme");
     localTheme ? setTheme(localTheme) : setMode("light");
     setMountedComponent(true);
-  }, []);
+  }, [setMode]);
   const value = useMemo(
     () => ({
       theme,
