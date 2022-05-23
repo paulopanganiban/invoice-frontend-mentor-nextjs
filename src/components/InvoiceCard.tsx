@@ -58,8 +58,9 @@ const InvoiceCard = ({
 export default InvoiceCard;
 const S = {
   InvoiceCardContainer: styled.div`
+    max-width: 1200px;
     margin: 1rem auto;
-    max-width: 90vw;
+    width: 90vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
